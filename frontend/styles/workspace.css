@@ -1,0 +1,15 @@
+.nav_element::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    background-color: rgba(41, 76, 190, 0.895);
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.nav_element_btn {
+    transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+}
