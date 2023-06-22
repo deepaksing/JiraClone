@@ -1,11 +1,14 @@
 const renderNavElement = (windowWidth: number) => {
   const navElements = [
-    { title: "Your Work" },
-    { title: "Projects" },
-    { title: "Filters" },
-    { title: "Dashboards" },
-    { title: "Teams" },
-    { title: "Apps" },
+    {
+      title: "Your Work",
+      path: "",
+    },
+    { title: "Projects", path: "/projects" },
+    { title: "Filters", path: "/filters" },
+    { title: "Dashboards", path: "/dashboards" },
+    { title: "Teams", path: "/teams" },
+    { title: "Apps", path: "/apps" },
   ];
 
   let visibleNavElements = navElements;
@@ -33,8 +36,6 @@ const renderNavElement = (windowWidth: number) => {
     visibleNavElements = navElements.slice(0, 6);
     showMoreNav = false;
   }
-
-  console.log(visibleNavElements);
 
   return { visibleNavElements, showMoreNav };
 };

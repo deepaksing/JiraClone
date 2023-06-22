@@ -1,4 +1,5 @@
 import { Spinner } from "@/components/Spinner";
+import YourWork from "@/components/your-work/page";
 import { SoftwareLayout } from "@/layout/auth-layout";
 import React from "react";
 
@@ -15,7 +16,11 @@ type Props = {};
 }
 
 const WorkspacePage = (props: Props) => {
-  return <SoftwareLayout>h</SoftwareLayout>;
+  return (
+    <SoftwareLayout>
+      <YourWork />
+    </SoftwareLayout>
+  );
 };
 
 export default WorkspacePage;

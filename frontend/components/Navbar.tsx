@@ -9,6 +9,10 @@ type Props = {};
 
 const Navbar: React.FC<Props> = (props) => {
   const [windowWidth, setWindowWidth] = useState<number>(0);
+  const moreElement = {
+    title: "More",
+    path: undefined,
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,9 +52,9 @@ const Navbar: React.FC<Props> = (props) => {
       <div className="flex min-w-0 items-center grow h-full">
         <div className="flex relative items-stretch grow shrink-0 basis-0 h-full ">
           {visibleNavElements.map((navElement, index) => (
-            <NavElement key={index} title={navElement.title} />
+            <NavElement key={index} nav={navElement} />
           ))}
-          {showMoreNav && <NavElement title="More" />}
+          {showMoreNav && <NavElement nav={moreElement} />}
 
           <div className="flex items-center ml-2 relative">
             {/* upper */}

@@ -5,5 +5,5 @@ type Props = {
 };
 
 export const WorkspaceAuthorizationLayout: React.FC<Props> = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className="h-full w-full relative">{children}</div>;
 };

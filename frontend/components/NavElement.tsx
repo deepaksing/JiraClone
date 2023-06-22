@@ -1,22 +1,39 @@
+"use client";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 type Props = {
-  title: string;
+  nav: {
+    title: string;
+    path: string | undefined;
+  };
 };
 
-const NavElement: React.FC<Props> = ({ title }) => {
+const NavElement: React.FC<Props> = ({ nav }) => {
+  const pathname = usePathname();
+  console.log(pathname, "deepak/" + nav.path);
   return (
-    <div className="flex relative items-center justify-center flex-col h-full mx-1 nav_element">
-      <button className="items-center box-border inline-flex max-w-full text-center cursor-pointer w-auto whitespace-nowrap align-middle rounded px-1 hover:bg-blue-100 hover:text-blue-600 h-9 nav_element_btn">
-        <div className="opacity-100 mx-0.5 grow shrink whitespace-nowrap text-ellipsis overflow-hidden">
-          {title}
+    <div
+      className={`flex relative items-center justify-center flex-col h-full mx-1 nav_element ${
+        pathname == "/deepak" + nav.path
+          ? "after:opacity-100"
+          : "after:opacity-0"
+      }`}
+    >
+      <button
+        className={`items-center box-border inline-flex max-w-full text-center cursor-pointer w-auto whitespace-nowrap align-middle rounded px-1 hover:bg-blue-100 hover:text-blue-600 h-9 nav_element_btn ${
+          pathname == "/deepak" + nav.path ? "text-blue-600" : ""
+        }`}
+      >
+        <div className="opacity-100 grow shrink whitespace-nowrap text-ellipsis overflow-hidden">
+          {nav.title}
         </div>
-        <span className="flex mt-1 grow-0 shrink-0 select-none">
+        <span className="flex mt-1.5 grow-0 shrink-0 select-none">
           <span className="opacity-50 ">
             <span aria-hidden="true" className="inline-block leading-none">
               <svg
-                width="24"
-                height="24"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 role="presentation"
               >

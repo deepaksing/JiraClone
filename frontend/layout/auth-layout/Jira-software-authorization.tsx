@@ -8,9 +8,13 @@ type Props = {
 
 export const SoftwareLayout: React.FC<Props> = ({ children }) => {
   return (
-    <>
+    <div className="w-full h-screen flex flex-col relative">
       <Navbar />
-      <WorkspaceAuthorizationLayout>{children}</WorkspaceAuthorizationLayout>
-    </>
+      <div className="h-full w-full overflow-hidden">
+        <div className="relative h-full w-full overflow-x-hidden overflow-y-scroll">
+          {children}
+        </div>
+      </div>
+    </div>
   );
 };
